@@ -1,0 +1,24 @@
+{
+  "parser": "babel-eslint",
+
+  "env": {
+    "browser": true,
+  },
+
+  "rules": {
+    "quotes": [2, 'single'],
+    "camelcase": [0],
+    "curly": [2, "multi-line"],
+    "eol-last": [1],
+    "no-constant-condition": [1],
+    "no-mixed-requires": [0],
+    "no-underscore-dangle": [0],
+    "no-unused-expressions": [1],
+    "no-new-func": [0],
+    "no-loop-func": [0],
+    "no-process-exit": [0],
+    "new-cap": [0],
+    "no-new": [0],
+    "global-strict": [0]
+  }
+}

@@ -41,6 +41,7 @@ export default React.createClass({
     return (
       <div>
         <h2>{weather.name}, {weather.sys.country}</h2>
+        <div>{weather.dt}</div>
         <div>{Math.round(weather.main.temp - 273.15)}</div>
         <div>
           {type.main}

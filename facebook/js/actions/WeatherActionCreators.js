@@ -1,4 +1,4 @@
-'use strtict';
+'use strict';
 
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import {API, ActionTypes} from '../constants/WeatherConstants';

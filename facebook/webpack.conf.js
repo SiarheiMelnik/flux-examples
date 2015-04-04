@@ -17,6 +17,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
+  eslint: {
+    configFile: '.eslintrc'
+  },
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
@@ -26,6 +29,11 @@ module.exports = {
         test: /\.jsx?$/,
         loaders: ['react-hot', 'babel?optional=runtime'],
         include: path.join(__dirname, 'js')
+      },
+      {
+        test: /\.js$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/
       }
     ]
   }

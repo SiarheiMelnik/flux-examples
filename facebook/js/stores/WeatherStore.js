@@ -26,7 +26,7 @@ var WeatherStore = Object.assign({}, EventEmitter.prototype, {
     this.removeListener(CHANGE_EVENT, callback);
   },
 
-  getWeather(data) {
+  getWeather() {
     return _weather;
   }
 
