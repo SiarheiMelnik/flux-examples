@@ -36,8 +36,19 @@ export default React.createClass({
       return null;
     }
 
+    let [type] = weather.weather;
+
     return (
-      <h2>{weather.name}, {weather.sys.country}</h2>
+      <div>
+        <h2>{weather.name}, {weather.sys.country}</h2>
+        <div>{Math.round(weather.main.temp - 273.15)}</div>
+        <div>
+          {type.main}
+        </div>
+        <img src={'http://openweathermap.org/img/w/'+type.icon+'.png'} />
+        <div>Humidity: {weather.main.humidity} %</div>
+        <div>Wind: {weather.wind.speed} mps</div>
+      </div>
     );
   }
 });

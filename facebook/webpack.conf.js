@@ -21,10 +21,12 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      loaders: ['react-hot', 'babel?optional=runtime'],
-      include: path.join(__dirname, 'js')
-    }]
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        loaders: ['react-hot', 'babel?optional=runtime'],
+        include: path.join(__dirname, 'js')
+      }
+    ]
   }
 };
