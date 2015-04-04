@@ -1,0 +1,22 @@
+{
+  "name": "facebook_flux",
+  "version": "1.0.0",
+  "description": "example",
+  "scripts": {
+  	"start": "node server.js"
+  },
+  "author": "siarhei.m.a@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "flux": "^2.0.1",
+    "react": "^0.13.1",
+    "whatwg-fetch": "^0.7.0"
+  },
+  "devDependencies": {
+    "babel-core": "^5.0.8",
+    "babel-loader": "^5.0.0",
+    "react-hot-loader": "^1.2.4",
+    "webpack": "^1.7.3",
+    "webpack-dev-server": "^1.8.0"
+  }
+}
