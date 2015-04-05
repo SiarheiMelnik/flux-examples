@@ -9,7 +9,7 @@ export default {
   },
 
   LOCATION: {
-      all: ['Minsk', 'Mahilyow', 'Homyel'],
+      all: ['Minsk', 'Mahilyow', 'New York', 'Pandan'],
       def: 'Minsk'
   },
 
