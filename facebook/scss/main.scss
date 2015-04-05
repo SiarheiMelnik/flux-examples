@@ -12,7 +12,7 @@ body {
 
 .w-card {
   margin: 8px;
-  padding: 8px;
+  padding: 16px;
   border-radius: 2px;
   position: relative;
   overflow: hidden;
@@ -23,8 +23,22 @@ body {
   box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
+.w-card-icon {
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  width: 45%;
+
+  .wi {
+    font-size: 116px;
+    line-height: 116px;
+  }
+}
+
 .w-card-content {
-  position: relative;
+  right: 0;
+  width: 45%;
+  position: absolute;
 }
 
 .w-card-content__day {

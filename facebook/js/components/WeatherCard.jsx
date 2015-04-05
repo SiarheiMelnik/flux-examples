@@ -34,6 +34,16 @@ export default React.createClass({
     this.setState(getStateFromStore);
   },
 
+  getIcon(name) {
+    let status = {
+      clouds: 'wi-cloudy',
+      rain: 'wi-rain',
+      sun: 'wi-day-sunny'
+    }
+
+    return status[name] || 'wi-day-sunny';
+  },
+
   getRenderData() {
 
     let {weather, loading} = this.state;
@@ -47,9 +57,14 @@ export default React.createClass({
     }
 
     let [type] = weather.weather;
+    let iconName = this.getIcon(type.main.toLowerCase());
 
     return (
-      <div className='w-card-content'>
+      <div>
+        <div className='w-card-icon'>
+          <i className={'wi '+iconName}></i>
+        </div>
+        <div className='w-card-content'>
           <h5>{weather.name}</h5>
           <h3 className='w-card-content__day'>
             {moment(weather.dt).format('dddd')}
@@ -61,6 +76,7 @@ export default React.createClass({
           <div>Humidity: {weather.main.humidity} %</div>
           <div>Wind: {weather.wind.speed} mps</div>
         </div>
+      </div>
     );
   },
 
