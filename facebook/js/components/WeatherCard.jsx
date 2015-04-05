@@ -7,7 +7,9 @@ import {LOCATION} from '../constants/WeatherConstants';
 
 function getStateFromStore() {
   return {
-    weather: WeatherStore.getWeather()
+    weather: WeatherStore.getWeather(),
+    loading: WeatherStore.getLoading(),
+    location: WeatherStore.getLocation()
   }
 }
 
@@ -31,10 +33,14 @@ export default React.createClass({
   },
 
   render() {
-    var {weather} = this.state;
+    var {weather, loading, location} = this.state;
+
+    if(loading) {
+      return <p>Loading ... </p>
+    }
 
     if (!weather) {
-      return null;
+      return <p>Error loading weather data, check location</p>;
     }
 
     let [type] = weather.weather;
