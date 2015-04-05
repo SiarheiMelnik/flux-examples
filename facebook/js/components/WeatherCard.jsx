@@ -1,6 +1,8 @@
 'use strict';
 
 import React from 'react';
+import moment from 'moment';
+
 import WeatherAction from '../actions/WeatherActionCreators';
 import WeatherStore from '../stores/WeatherStore';
 import {LOCATION} from '../constants/WeatherConstants';
@@ -48,13 +50,14 @@ export default React.createClass({
 
     return (
       <div className='w-card-content'>
-          <h2>{weather.name}</h2>
-          <div>{weather.dt}</div>
-          <div>{Math.round(weather.main.temp - 273.15)}</div>
-          <div>
-            {type.main}
+          <h5>{weather.name}</h5>
+          <h3 className='w-card-content__day'>
+            {moment(weather.dt).format('dddd')}
+          </h3>
+          <div className='w-card-content__temp'>
+            {Math.round(weather.main.temp - 273.15)}
           </div>
-          <img src={'http://openweathermap.org/img/w/'+type.icon+'.png'} />
+          <h2>{type.main}</h2>
           <div>Humidity: {weather.main.humidity} %</div>
           <div>Wind: {weather.wind.speed} mps</div>
         </div>
