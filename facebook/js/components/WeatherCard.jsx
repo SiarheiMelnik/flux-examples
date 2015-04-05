@@ -3,6 +3,7 @@
 import React from 'react';
 import WeatherAction from '../actions/WeatherActionCreators';
 import WeatherStore from '../stores/WeatherStore';
+import {LOCATION} from '../constants/WeatherConstants';
 
 function getStateFromStore() {
   return {
@@ -18,7 +19,7 @@ export default React.createClass({
 
   componentDidMount() {
     WeatherStore.addChangeListener(this._onChange);
-    WeatherAction.load('Minsk');
+    WeatherAction.load(LOCATION.def);
   },
 
   componentWillUnmount() {

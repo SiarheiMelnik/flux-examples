@@ -8,6 +8,11 @@ export default {
     forecast: 'http://api.openweathermap.org/data/2.5/forecast/daily'
   },
 
+  LOCATION: {
+      all: ['Minsk', 'Mahilyow', 'Homyel'],
+      def: 'Minsk'
+  },
+
   ActionTypes: keyMirror({
     FETCH_WEATHER: null,
     RECEIVE_WEATHER_SUCCESS: null,
