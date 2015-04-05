@@ -32,11 +32,12 @@ export default React.createClass({
     this.setState(getStateFromStore);
   },
 
-  render() {
-    var {weather, loading, location} = this.state;
+  getRenderData() {
+
+    let {weather, loading} = this.state;
 
     if(loading) {
-      return <p>Loading ... </p>
+      return <div className='w-card-loading'>Loading ... </div>
     }
 
     if (!weather) {
@@ -46,16 +47,24 @@ export default React.createClass({
     let [type] = weather.weather;
 
     return (
-      <div>
-        <h2>{weather.name}, {weather.sys.country}</h2>
-        <div>{weather.dt}</div>
-        <div>{Math.round(weather.main.temp - 273.15)}</div>
-        <div>
-          {type.main}
+      <div className='w-card-content'>
+          <h2>{weather.name}</h2>
+          <div>{weather.dt}</div>
+          <div>{Math.round(weather.main.temp - 273.15)}</div>
+          <div>
+            {type.main}
+          </div>
+          <img src={'http://openweathermap.org/img/w/'+type.icon+'.png'} />
+          <div>Humidity: {weather.main.humidity} %</div>
+          <div>Wind: {weather.wind.speed} mps</div>
         </div>
-        <img src={'http://openweathermap.org/img/w/'+type.icon+'.png'} />
-        <div>Humidity: {weather.main.humidity} %</div>
-        <div>Wind: {weather.wind.speed} mps</div>
+    );
+  },
+
+  render() {
+    return (
+      <div className='w-card'>
+        {this.getRenderData()}
       </div>
     );
   }

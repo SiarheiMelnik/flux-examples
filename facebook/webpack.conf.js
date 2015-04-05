@@ -34,6 +34,10 @@ module.exports = {
         test: /\.js$/,
         loader: 'eslint-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.scss$/,
+        loader: "style!css!sass"
       }
     ]
   }

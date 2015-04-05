@@ -15,15 +15,17 @@ export default React.createClass({
     let locations = LOCATION.all;
 
     return (
-      <Input
-        type="select"
-        onChange={this._onChange}
-        value={locations.def}
-        >
-        {locations.map((v, i) => {
-          return <option key={'loc-'+i} value={v}>{v}</option>
-        })}
-      </Input>
+      <div className='w-location'>
+        <Input
+          type="select"
+          onChange={this._onChange}
+          value={locations.def}
+          >
+          {locations.map((v, i) => {
+            return <option key={'loc-'+i} value={v}>{v}</option>
+          })}
+        </Input>
+      </div>
     );
   }
 });

@@ -1,0 +1,41 @@
+body {
+  background-color: #fff;
+}
+
+.w-wrap {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.w-card {
+  margin: 8px;
+  padding: 8px;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  width: 350px;
+  height: 350px;
+  background-color: #4CAF50;
+  color: #fff;
+  box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.w-card-content {
+  position: relative;
+}
+
+.w-card-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+}
+
+.w-location {
+  margin-top: 25px;
+  width: 350px;
+}
